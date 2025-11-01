@@ -1,0 +1,14 @@
+// jsconfig.json (ROOT FOLDER)
+{
+  "compilerOptions": {
+    // Base URL 'src' set karna hai
+    "baseUrl": "src",
+    // Paths define karna hai taaki VS Code samjhe
+    "paths": {
+      // '@/*' ka matlab 'src' folder ke andar kuch bhi
+      "@/*": ["*"]
+    }
+  },
+  // Sirf 'src' folder ko include karna hai
+  "include": ["src"]
+}
