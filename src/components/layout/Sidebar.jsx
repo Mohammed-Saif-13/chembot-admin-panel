@@ -18,37 +18,37 @@ import { cn } from "@/lib/utils";
 const navItems = [
   {
     name: "Dashboard",
-    path: "/admin/dashboard", // ✅ Changed
+    path: "/admin/dashboard",
     icon: LayoutDashboard,
     section: "Core Management",
   },
   {
     name: "Orders",
-    path: "/admin/orders", // ✅ Changed
+    path: "/admin/orders",
     icon: ShoppingCart,
     section: "Core Management",
   },
   {
     name: "Products (Sheets)",
-    path: "/admin/products", // ✅ Changed
+    path: "/admin/products",
     icon: FlaskConical,
     section: "Core Management",
   },
   {
     name: "Customers",
-    path: "/admin/customers", // ✅ Changed
+    path: "/admin/customers",
     icon: Users,
     section: "Core Management",
   },
   {
     name: "Reports & History",
-    path: "/admin/reports", // ✅ Changed
+    path: "/admin/reports",
     icon: LineChart,
     section: "Reporting & Tools",
   },
   {
     name: "Settings",
-    path: "/admin/settings", // ✅ Changed
+    path: "/admin/settings",
     icon: Settings,
     section: "Reporting & Tools",
   },
@@ -78,7 +78,7 @@ const Sidebar = ({ isCollapsed, onToggleCollapse }) => {
       </div>
 
       {/* Navigation Area - Scrollable */}
-      <nav className="flex-1          overflow-y-auto p-4 space-y-1">
+      <nav className="flex-1 overflow-y-auto p-4 space-y-1">
         {navItems.map((item) => {
           const isActive =
             item.path === "/admin/dashboard"
@@ -136,11 +136,11 @@ const Sidebar = ({ isCollapsed, onToggleCollapse }) => {
       <div className="p-4 border-t border-slate-800 shrink-0 space-y-2">
         <Button
           asChild
-          variant={pathname.startsWith("/profile") ? "default" : "ghost"}
+          variant={pathname.startsWith("/admin/profile") ? "default" : "ghost"}
           className={cn(
             "w-full h-10 justify-start text-sm transition-colors rounded-lg",
             isCollapsed ? "px-0 justify-center" : "px-3",
-            pathname.startsWith("/profile")
+            pathname.startsWith("/admin/profile")
               ? "bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg"
               : "text-slate-200 hover:bg-slate-800 hover:text-white"
           )}
