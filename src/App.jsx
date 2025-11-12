@@ -10,6 +10,7 @@ import CustomersPage from "./pages/CustomersPage";
 import ReportsPage from "./pages/ReportsPage";
 import SettingsPage from "./pages/SettingsPage";
 import ProfilePage from "./pages/ProfilePage";
+import ChatLogsPage from "./pages/ChatLogsPage";
 import Home from "./pages/Home";
 
 // ✅ Import ProtectedRoute
@@ -50,6 +51,7 @@ function App() {
           <Route path="reports" element={<ReportsPage />} />
           <Route path="settings" element={<SettingsPage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="chatlogs" element={<ChatLogsPage />} />
           <Route
             path="*"
             element={

@@ -9,9 +9,6 @@ import { TrendingUp, Package } from "lucide-react";
 import { formatCurrency } from "@/lib/utils";
 
 export const TopProductsCard = ({ products }) => {
-  // Find max revenue for scaling bars
-  const maxRevenue = products.length > 0 ? products[0].revenue : 1;
-
   // ==================== EMPTY STATE ====================
   if (!products || products.length === 0) {
     return (
@@ -21,6 +18,9 @@ export const TopProductsCard = ({ products }) => {
       </div>
     );
   }
+
+  // Find max revenue for scaling bars (MOVED HERE - after null check)
+  const maxRevenue = products.length > 0 ? products[0].revenue : 1;
 
   // ==================== RENDER ====================
   return (
@@ -49,15 +49,14 @@ export const TopProductsCard = ({ products }) => {
             <div className="flex items-center gap-2">
               <div className="flex-1 bg-slate-200 dark:bg-slate-700 rounded-full h-2 overflow-hidden">
                 <div
-                  className={`h-full rounded-full transition-all duration-500 ${
-                    index === 0
-                      ? "bg-gradient-to-r from-green-500 to-emerald-500"
-                      : index === 1
+                  className={`h-full rounded-full transition-all duration-500 ${index === 0
+                    ? "bg-gradient-to-r from-green-500 to-emerald-500"
+                    : index === 1
                       ? "bg-gradient-to-r from-blue-500 to-indigo-500"
                       : index === 2
-                      ? "bg-gradient-to-r from-purple-500 to-pink-500"
-                      : "bg-gradient-to-r from-slate-400 to-slate-500"
-                  }`}
+                        ? "bg-gradient-to-r from-purple-500 to-pink-500"
+                        : "bg-gradient-to-r from-slate-400 to-slate-500"
+                    }`}
                   style={{ width: `${barWidth}%` }}
                 />
               </div>

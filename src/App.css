@@ -49,3 +49,101 @@
 input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
+
+/* ========== ULTIMATE CHART BORDER FIX ========== */
+/* Global focus/active state removal */
+*:focus,
+*:active,
+*:focus-visible,
+*:focus-within {
+  outline: 0 !important;
+  outline: none !important;
+  outline-width: 0 !important;
+  outline-style: none !important;
+  outline-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Remove tap highlight */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* SVG complete lockdown */
+svg,
+svg *,
+svg g,
+svg rect,
+svg path,
+svg line,
+svg circle,
+svg text {
+  outline: 0 !important;
+  outline: none !important;
+  border: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+svg:focus,
+svg:active,
+svg *:focus,
+svg *:active {
+  outline: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Recharts nuclear option */
+[class*="recharts"],
+.recharts-wrapper,
+.recharts-wrapper *,
+.recharts-surface,
+.recharts-surface *,
+.recharts-layer,
+.recharts-layer *,
+.recharts-cartesian-grid,
+.recharts-cartesian-grid *,
+.recharts-line,
+.recharts-line *,
+.recharts-bar,
+.recharts-bar *,
+.recharts-pie,
+.recharts-pie * {
+  outline: 0 !important;
+  outline: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+[class*="recharts"]:focus,
+[class*="recharts"]:active,
+.recharts-wrapper:focus,
+.recharts-wrapper:active,
+.recharts-surface:focus,
+.recharts-surface:active {
+  outline: 0 !important;
+  outline: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Card content inside charts */
+[class*="card"] [class*="recharts"] {
+  pointer-events: auto !important;
+}
+
+/* Disable selection on chart container */
+.recharts-responsive-container {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  outline: none !important;
+}

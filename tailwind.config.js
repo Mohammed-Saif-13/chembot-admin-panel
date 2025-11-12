@@ -1,15 +1,11 @@
-// tailwind.config.js
-
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  // Dark mode ko support karne ke liye:
   darkMode: ["class"],
   content: [
     "./index.html",
     "./src/**/*.{js,jsx}",
-    // shadcn components ke liye yeh line zaroori hai:
     "./components/**/*.{ts,tsx}",
   ],
   theme: {
@@ -22,10 +18,9 @@ export default {
     },
     extend: {
       colors: {
-        // shadcn/ui ke color variables:
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
+        ring: "transparent", // ✅ RING DISABLE
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -63,8 +58,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"], // Body text
-        display: ["Manrope", "system-ui", "-apple-system", "sans-serif"], // Headings
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        display: ["Manrope", "system-ui", "-apple-system", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
@@ -82,5 +77,13 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")], // shadcn ke liye zaroori plugin
+  plugins: [require("tailwindcss-animate")],
+  // ✅ CORE PLUGINS DISABLE
+  corePlugins: {
+    ringWidth: false,
+    ringColor: false,
+    ringOffsetWidth: false,
+    ringOffsetColor: false,
+    ringOpacity: false,
+  },
 };

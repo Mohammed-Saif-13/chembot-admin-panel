@@ -10,6 +10,7 @@ import {
   UserCircle,
   ChevronLeft,
   ChevronRight,
+  MessageSquare,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -38,6 +39,12 @@ const navItems = [
     name: "Customers",
     path: "/admin/customers",
     icon: Users,
+    section: "Core Management",
+  },
+  {
+    name: "Chat Logs",
+    path: "/admin/chatlogs",
+    icon: MessageSquare,
     section: "Core Management",
   },
   {
